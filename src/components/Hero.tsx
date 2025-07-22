@@ -10,7 +10,7 @@ const Hero: React.FC = () => (
         <a className="hero-cta" href="#contact">Contact Me</a>
       </div>
       <div className="hero-photo">
-          <img src="/foto sitio portfolio.png" alt="Portfolio portrait" />
+          <img src="/Portfolio/foto sitio portfolio.png" alt="Portfolio portrait" />
       </div>
     </div>
   </section>
