@@ -15,6 +15,7 @@ import './App.css';
 const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState(true);
   const [route, setRoute] = useState(window.location.hash.replace('#', '') || 'home');
+  const [menuOpen, setMenuOpen] = useState(false);
 
   React.useEffect(() => {
     document.body.setAttribute('data-theme', darkMode ? 'dark' : 'light');
@@ -27,7 +28,17 @@ const App: React.FC = () => {
     <div className="portfolio-root">
       <nav className="navbar">
         <div className="nav-logo">TPM Portfolio</div>
-        <ul className="nav-links">
+        <button
+          className="hamburger"
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span className="hamburger-bar"></span>
+          <span className="hamburger-bar"></span>
+          <span className="hamburger-bar"></span>
+        </button>
+        <ul className={`nav-links${menuOpen ? ' open' : ''}`} onClick={() => setMenuOpen(false)}>
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
